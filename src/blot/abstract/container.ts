@@ -6,6 +6,7 @@ class ContainerBlot extends ParentBlot {
   public static blotName = 'container';
   public static scope = Scope.BLOCK_BLOT;
   public static tagName: string | string[];
+  public domNode!: HTMLElement;
 
   public prev!: BlockBlot | ContainerBlot | null;
   public next!: BlockBlot | ContainerBlot | null;

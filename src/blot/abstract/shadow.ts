@@ -9,6 +9,11 @@ class ShadowBlot implements Blot {
   public static requiredContainer: BlotConstructor;
   public static scope: Scope;
   public static tagName: string | string[];
+  public prev: Blot | null;
+  public next: Blot | null;
+  // @ts-expect-error Fix me later
+  public parent: Parent;
+
 
   public static create(rawValue?: unknown): Node {
     if (this.tagName == null) {
@@ -41,10 +46,7 @@ class ShadowBlot implements Blot {
     return node;
   }
 
-  public prev: Blot | null;
-  public next: Blot | null;
-  // @ts-expect-error Fix me later
-  public parent: Parent;
+
 
   // Hack for accessing inherited static methods
   get statics(): any {
